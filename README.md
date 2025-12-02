@@ -12,13 +12,12 @@ While confusingly being called _Comma-Separated Values_, CSV files can have diff
 
 
 
+# Basic CSV Text Layer Link
+This is the basic rig I like to use. The `sourceText` grabs the value from the CSV file using two _Slider Controls_ to act as line and column selectors. I like to link those up to the Layer Name, because you're likely to have lots of layers referencing different bits of the CSV and this is a great way to duplicate layers to create news lines of text. You can, of course, disable the Expression on the _Slider Controls_ to control them manually.
+![Comp 1_1](https://github.com/user-attachments/assets/3eb7cce8-4e35-493f-8f38-d2e0141f3c25)
+
 # CSV Table
 ![Table Autoposition](https://github.com/user-attachments/assets/6a8f4391-6562-4816-8cc8-07eb17871487)
 
 # Lower Third
 ![__1](https://github.com/user-attachments/assets/f2f3a167-5dfd-46fe-8aaf-ac05667b1030)
-
-
-
-# Basic CSV Text Layer Link
-![Comp 1_1](https://github.com/user-attachments/assets/3eb7cce8-4e35-493f-8f38-d2e0141f3c25)
