@@ -17,7 +17,9 @@ This is the basic rig I like to use. The `sourceText` grabs the value from the C
 ![Comp 1_1](https://github.com/user-attachments/assets/3eb7cce8-4e35-493f-8f38-d2e0141f3c25)
 
 # CSV Table
+These are some of those CSV Text Layer Rigs in action, paired with dynamic placing in rows and columns. The Layer Name controls the placing of the Text Layers, and there's basic styling Pseudo Effects available to control cell sizes and paddings.
 ![Table Autoposition](https://github.com/user-attachments/assets/6a8f4391-6562-4816-8cc8-07eb17871487)
 
 # Lower Third
+Here the line and column Pseudo Effects were linked up the the Comp Name—while having static columns (e.g. Title/Subtitle), duplicating the comp (thus incrementing the suffix by one) will select the next line, updating the text accordingly. Great to set up line 1 just how you like it and then duplicate as many times as you need.
 ![__1](https://github.com/user-attachments/assets/f2f3a167-5dfd-46fe-8aaf-ac05667b1030)
