@@ -53,7 +53,7 @@ Yep: Every time a CSV is dragged into a composition, its whole structure is repl
 ### 6. Watch out for performance issues.
 The bigger the CSV file and the more often it's referenced, the more performance issues you're likely to run into. To mitigate that problem, use `posterizeTime(0);` in the beginning of Expressions referencing the file to make After Effects calculate it just once on the first frame. This will make the entire property static and will ignore keyframes, so only use when you don't want to animate that property. I like to have the _Render Time_ visible in the timeline to see what's eating performance. 
 > [!TIP]
-> Layers with `Opacity: 0` are not rendered and thus don't impact render time. That's why I like to have the more complicated expressions on Null Objects (usually called _CTRL_), because Nulls by default have their opacity set to 0.
+> Layers with `Opacity: 0` are not rendered and thus don't impact render time. That's why I like to have the more complicated expressions on Null Objects (usually called _CTRL_), because Nulls by default have their opacity set to 0. You can also use conditional statements to figure out when a layer is no longer visible on screen and then turn the Opacity to 0.
 
 
 
