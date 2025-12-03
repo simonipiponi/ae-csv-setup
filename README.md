@@ -29,9 +29,9 @@ If you want the header to be readable, insert a blank first line.
 The way we access the CSV file is using a direct `footage("CSV.csv")` call, which means it doesn't reference the layer in the current composition. However, it's generally a good idea to **always drop a CSV file into all comps you're using it in**. If you don't, _Collect Files_ or _Reduce Project_ using After Effect's Dependencies tools will get rid of the file, because those tools don't look for Expression references to files. And, since _Collect Files_ is what After Effects does when you send a project to Media Encoder, your CSV data will simply not show up there.
 
 ### 5. Watch out for performance issues.
-The bigger the CSV becomes, the more performance issues you're likely to run into. To mitigate that problem, use `posterizeTime(0);` in the beginning of Expressions referencing the file to make After Effects calculate it just once on the first Frame. This will make the entire property static and will ignore keyframes, so only use when you don't want to animate that property. I like to have the _Render Time_ visible in the timeline to see what's eating performance. 
+The bigger the CSV file and the more often it's referenced, the more performance issues you're likely to run into. To mitigate that problem, use `posterizeTime(0);` in the beginning of Expressions referencing the file to make After Effects calculate it just once on the first frame. This will make the entire property static and will ignore keyframes, so only use when you don't want to animate that property. I like to have the _Render Time_ visible in the timeline to see what's eating performance. 
 > [!TIP]
-> Layers with `Opacity: 0` are not rendered and thus don't impact Render Time. That's why I like to have the more complicated expressions on Null Objects (usually called _CTRL_, because Nulls by default have their opacity set to 0.
+> Layers with `Opacity: 0` are not rendered and thus don't impact Render Time. That's why I like to have the more complicated expressions on Null Objects (usually called _CTRL_), because Nulls by default have their opacity set to 0.
 
 
 
