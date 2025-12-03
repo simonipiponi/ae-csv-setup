@@ -26,12 +26,27 @@ The first line in a CSV is always the header, which After Effects can't read.
 If you want the header to be readable, insert a blank first line.
 
 ### 4. The file doesn't have to be in a composition. But it should be.
-The way we access the CSV file is using a direct `footage("CSV.csv")` call, which means it doesn't reference the layer in the current composition. However, it's generally a good idea to **always drop a CSV file into all comps you're using it in**. If you don't, _Collect Files_ or _Reduce Project_ using After Effect's Dependencies tools will get rid of the file, because those tools don't look for Expression references to files. And, since _Collect Files_ is what After Effects does when you send a project to Media Encoder, your CSV data will simply not show up there.
+The way we access the CSV file is using a direct `footage("CSV.csv")` call _(well, indirectly—more on that at 5.)_, which means it doesn't reference the layer in the current composition. However, it's generally a good idea to **always drop a CSV file into all comps you're using it in**. If you don't, _Collect Files_ or _Reduce Project_ using After Effect's Dependencies tools will get rid of the file, because those tools don't look for Expression references to files. And, since _Collect Files_ is what After Effects does when you send a project to Media Encoder, your CSV data will simply not show up there. 
+I like to reference the CSV like this: 
+```
+const CSV = thisComp.layer(1).source;
+```
+Instead of the classic way:
+```
+const CSV = footage("CSV.csv");
+```
 
-### 5. Watch out for performance issues.
+That effectively makes the CSV behave like a normal footage item, and you can replace the CSV with a differently named one without having to go into epxressions to update the CSV file name. Just be sure it's always the first layer in the comp.
+Be careful doing it like this with huge CSV files though, because...
+
+### 5. The file size of your AE Project might increase exponentially.
+Yep: Every time a CSV is dragged into a composition, the whole structure of that is replicated as Pseudo Effects on that layer, and that blows up the size of the After Effects file. With a huge CSV referenced in a lot of comps you can easily climb to a couple of GBs for an After Effects Project. If that's the case, maybe put the CSV file in a subcomp and drag that into the comps. 
+
+### 6. Watch out for performance issues.
 The bigger the CSV file and the more often it's referenced, the more performance issues you're likely to run into. To mitigate that problem, use `posterizeTime(0);` in the beginning of Expressions referencing the file to make After Effects calculate it just once on the first frame. This will make the entire property static and will ignore keyframes, so only use when you don't want to animate that property. I like to have the _Render Time_ visible in the timeline to see what's eating performance. 
 > [!TIP]
 > Layers with `Opacity: 0` are not rendered and thus don't impact Render Time. That's why I like to have the more complicated expressions on Null Objects (usually called _CTRL_), because Nulls by default have their opacity set to 0.
+
 
 
 
