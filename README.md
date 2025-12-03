@@ -48,7 +48,7 @@ This means that the CSV has to be the first layer in the comp. This effectively 
 Be careful doing it like this with huge CSV files though, because...
 
 ### 5. The file size of your AE Project might increase exponentially.
-Yep: Every time a CSV is dragged into a composition, the whole structure of that is replicated as Pseudo Effects on that layer, and that blows up the size of the After Effects file. With a huge CSV referenced in a lot of comps you can easily climb to a couple of GBs for an After Effects Project. If that's the case, maybe put the CSV file in a subcomp and drag that into the comps. 
+Yep: Every time a CSV is dragged into a composition, its whole structure is replicated as Pseudo Effects on that layer, and that blows up the size of the After Effects file. With a huge CSV referenced in a lot of comps you can easily climb to a couple of GBs for an After Effects Project. If that's the case, maybe put the CSV file in a subcomp and drag that into the comps. 
 
 ### 6. Watch out for performance issues.
 The bigger the CSV file and the more often it's referenced, the more performance issues you're likely to run into. To mitigate that problem, use `posterizeTime(0);` in the beginning of Expressions referencing the file to make After Effects calculate it just once on the first frame. This will make the entire property static and will ignore keyframes, so only use when you don't want to animate that property. I like to have the _Render Time_ visible in the timeline to see what's eating performance. 
