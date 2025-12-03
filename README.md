@@ -16,7 +16,15 @@ This is the structure we're looking for:
 Name, Profession, Age
 Lucius Telljoy, Disgraced Magician, 43
 Olialy Polly, Chilean singer-songwriter, 35
+Playt Dill, , 40
 ```
+The first line denotes the amount of columns, and each line below must have the same amount of commas. If a cell is supposed to be empty (like in the third line), just leave it empty. This will display like this:
+| Name  | Profession | Age |
+| ------------- | ------------- | ------------- |
+| Lucius Telljoy  | Disgraced Magician  | 43 |
+| Olialy Polly | Chilean singer-songwriter  | 35 |
+| Playt Dill | | 40 |
+
 
 ### 2. Special Characters work, but only if you're careful.
 Make sure to export CSVs in UTF-8 encoding to prevent special characters `(ä,ü,ø,ß, ...)` from breaking the text. This isn't always the default setting, and depending on your program of choice, you might have to specify while "Saving As".
