@@ -44,7 +44,7 @@ Instead of the classic way:
 const CSVFile = footage("CSV.csv");
 ```
 
-That effectively makes the CSV behave like a normal footage item, and your expressions will break if it's missing. Bonus: You can replace the CSV with a differently named one without having to go into epxressions to update the CSV file name. Just be sure it's always the first layer in the comp.
+This means that the CSV has to be the first layer in the comp — otherwise, this effectively makes the CSV behave like a normal footage item. Expressions will break if it's no longer in the comp (which is a good thing), and you can replace the CSV with a differently named one without having to go into expressions to update the CSV file name.
 Be careful doing it like this with huge CSV files though, because...
 
 ### 5. The file size of your AE Project might increase exponentially.
