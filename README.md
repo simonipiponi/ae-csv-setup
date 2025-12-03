@@ -8,7 +8,7 @@
 ## Things to know about CSVs in After Effects
 
 ### 1. "Comma-Seperated Values" is a lie
-CSV (or _Comma-Separated Values_) is a simple file format to store data in rows and columns. You can import and export them from _Microsoft Excel_ or similar programs. However, I like to work directly on the .csv file in a code editing software _(such as [VS Code](https://code.visualstudio.com/))_ or a text editor, because of a quirk in the file format:
+CSV (or _Comma-Separated Values_) is an exchange format to store data in rows and columns. You can import and export them from _Microsoft Excel_ or similar programs. However, I like to work directly on the .csv file in a code editing software _(such as [VS Code](https://code.visualstudio.com/))_ or a text editor, because of a quirk in the file format:
 While confusingly being called _Comma-Separated Values_, CSV files can have different delimiters (most commonly semicolons and tabs), and Microsoft Excel will usually output semicolon-seperated values even if specified differently. On the other hand, **After Effects will only accept actual comma-separated CSV files.** To fix that, either export from Excel and replace all semicolons with commas in VS Code or use a simple [online helper program](https://onlinetools.com/csv/change-csv-delimiter) to do the job for you. Or work directly in the CSV file and skip all that jazz.
 
 This is the structure we're looking for:
