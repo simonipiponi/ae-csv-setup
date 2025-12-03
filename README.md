@@ -35,7 +35,7 @@ The bigger the CSV file and the more often it's referenced, the more performance
 
 
 
-# Basic CSV Text layer Link
+# Basic CSV Text Layer Link
 This is the basic rig I like to use. The `sourceText` grabs the value from the CSV file using two _Slider Controls_ to act as line and column selectors. I like to link those up to the layer name, because you're likely to have lots of layers referencing different bits of the CSV and this is a great way to duplicate layers to create news lines of text. You can, of course, disable the Expression on the _Slider Controls_ to control them manually.
 
 ![comp 1_1](https://github.com/user-attachments/assets/3eb7cce8-4e35-493f-8f38-d2e0141f3c25)
