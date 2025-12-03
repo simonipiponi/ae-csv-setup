@@ -29,11 +29,11 @@ If you want the header to be readable, insert a blank first line.
 The way we access the CSV file is using a direct `footage("CSV.csv")` call — well, kind of, I'll get to it — which means it doesn't reference the layer in the current composition. However, it's generally a good idea to **always drop a CSV file into all comps you're using it in**. If you don't, _Collect Files_ or _Reduce Project_ using After Effect's Dependencies tools will get rid of the file, because those tools don't look for Expression references to files. And, since _Collect Files_ is what After Effects does when you send a project to Media Encoder, your CSV data will simply not show up there. 
 That's why I like to reference the CSV like this: 
 ```
-const CSV = thisComp.layer(1).source;
+const CSVFile = thisComp.layer(1).source;
 ```
 Instead of the classic way:
 ```
-const CSV = footage("CSV.csv");
+const CSVFile = footage("CSV.csv");
 ```
 
 That effectively makes the CSV behave like a normal footage item, and your expressions will break if it's missing. Bonus: You can replace the CSV with a differently named one without having to go into epxressions to update the CSV file name. Just be sure it's always the first layer in the comp.
